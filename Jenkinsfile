@@ -5,14 +5,27 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/harisrimatheshwaran/jenkins-auto_build_python.git'
+                git 'https://github.com/harisrimatheshwaran/jenkins-auto_build_python.git'
             }
         }
 
-        stage('Build & Run') {
+        stage('Build') {
+            steps {
+                sh 'echo Building project'
+            }
+        }
+
+        stage('Run Python') {
             steps {
                 sh 'python3 nano.py'
             }
         }
+
+        stage('Complete') {
+            steps {
+                echo 'Pipeline finished successfully'
+            }
+        }
     }
 }
+
