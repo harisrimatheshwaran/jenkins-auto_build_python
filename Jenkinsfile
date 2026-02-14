@@ -3,15 +3,9 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/harisrimatheshwaran/jenkins-auto_build_python.git'
-            }
-        }
-
         stage('Build') {
             steps {
-                sh 'echo Building project'
+                echo 'Building project'
             }
         }
 
@@ -28,4 +22,3 @@ pipeline {
         }
     }
 }
-
