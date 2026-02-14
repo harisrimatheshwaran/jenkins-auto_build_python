@@ -5,7 +5,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/harisrimatheshwaran/jenkins-auto_build_python.git'
+                git branch: 'main', url: 'https://github.com/harisrimatheshwaran/jenkins-auto_build_python.git'
             }
         }
 
